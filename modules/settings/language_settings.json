@@ -1,0 +1,5 @@
+{
+    "useFahrenheit": false,
+    "useTwelveHourClock": false,
+    "weatherLocation": "Boston"
+}

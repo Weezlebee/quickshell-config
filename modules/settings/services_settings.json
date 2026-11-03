@@ -1,0 +1,5 @@
+{
+    "batteryPollSeconds": 5,
+    "lyricsBackend": "none",
+    "weatherPollMinutes": 60
+}

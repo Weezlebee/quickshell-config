@@ -1,0 +1,25 @@
+{
+  "classes": [
+    {
+      "id": "mtdois6ebgaqb",
+      "name": "English",
+      "color": "#9ccfd8"
+    },
+    {
+      "id": "mtdom2erv15vo",
+      "name": "Math",
+      "color": "#eb6f92"
+    },
+    {
+      "id": "mtdomjfurknim",
+      "name": "Biology",
+      "color": "#31748f"
+    },
+    {
+      "id": "mtdomphczgehw",
+      "name": "History",
+      "color": "#f6c177"
+    }
+  ],
+  "assignments": []
+}

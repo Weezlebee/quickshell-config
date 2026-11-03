@@ -1,0 +1,38 @@
+{
+  "classes": [
+    {
+      "id": "mtqjcmyjr72vr",
+      "name": "Biology",
+      "color": "#31748f"
+    },
+    {
+      "id": "mtqjcqmsuengy",
+      "name": "Math",
+      "color": "#eb6f92"
+    },
+    {
+      "id": "mtqjcwsaa1ugg",
+      "name": "History",
+      "color": "#f6c177"
+    },
+    {
+      "id": "mtqjd64c24ztk",
+      "name": "English",
+      "color": "#c4a7e7"
+    },
+    {
+      "id": "mufvneni1nucq",
+      "name": "Latin",
+      "color": "#ebbcba"
+    }
+  ],
+  "assignments": [
+    {
+      "id": "mvtwb28q599dt",
+      "title": "LATIN TEST O/S/T/US/MUS/NT",
+      "classId": "mufvneni1nucq",
+      "dueDate": "2026-11-12",
+      "done": false
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+singleton GlobalStates 1.0 GlobalStates.qml
+singleton LocaleConfig 1.0 LocaleConfig.qml
+singleton ServicesConfig 1.0 ServicesConfig.qml
