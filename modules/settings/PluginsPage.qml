@@ -24,6 +24,7 @@ ColumnLayout {
             property bool performanceWidget: true
             property bool lyricsWidget: true
             property bool bluetoothQuickToggle: true
+            property bool bottomAppBar: true
         }
     }
 
@@ -31,7 +32,8 @@ ColumnLayout {
         { key: "weatherWidget", name: "Weather widget", sub: "Show weather in the top bar" },
         { key: "performanceWidget", name: "Performance widget", sub: "CPU/RAM usage indicator" },
         { key: "lyricsWidget", name: "Lyrics", sub: "Show synced lyrics for playing media" },
-        { key: "bluetoothQuickToggle", name: "Bluetooth quick toggle", sub: "Quick-access toggle in control center" }
+        { key: "bluetoothQuickToggle", name: "Bluetooth quick toggle", sub: "Quick-access toggle in control center" },
+        { key: "bottomAppBar", name: "Bottom app dock", sub: "macOS-style pinned & running apps bar" }
     ]
 
     Rectangle {

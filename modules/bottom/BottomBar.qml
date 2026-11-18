@@ -4,6 +4,7 @@ import "../settings"
 import "../theme"
 import "../top"
 import "../widgets"
+import "./"
 import QtQuick
 import Quickshell
 import Quickshell.Hyprland
@@ -18,7 +19,7 @@ Variants {
         required property var modelData
 
         // ==========================================================
-        // BOTTOM BAR
+        // BOTTOM BAR (Frame + Fillets + Launcher Trigger)
         // ==========================================================
         PanelWindow {
             id: bottomBarWindow
@@ -35,9 +36,6 @@ Variants {
                 left: true
             }
 
-            // ==========================================================
-            // GLOBAL SHORTCUT KEYBIND
-            // ==========================================================
             GlobalShortcut {
                 name: "AppLauncherToggle"
                 onPressed: {
@@ -66,7 +64,7 @@ Variants {
 
                     MouseArea {
                         anchors.fill: parent
-                        cursorShape: Qt.PointerCursor
+                        cursorShape: Qt.PointingHandCursor
                         onClicked: {
                             if (launcherPopup.visible)
                                 launcherContent.closeWithAnimation();
@@ -74,9 +72,7 @@ Variants {
                                 launcherPopup.visible = true;
                         }
                     }
-
                 }
-
             }
 
             RoundedCorner {
@@ -114,7 +110,7 @@ Variants {
                 anchor.rect.height: bottomBarWindow.height
                 anchor.edges: Edges.Bottom
                 anchor.gravity: Edges.Top
-                anchor.margins.bottom: 8
+                anchor.margins.bottom: appDock.dockEnabled ? 50 : 8
                 color: "transparent"
                 visible: false
 
@@ -124,9 +120,42 @@ Variants {
                     anchors.fill: parent
                     onRequestClose: launcherPopup.visible = false
                 }
+            }
+        }
 
+        // ==========================================================
+        // MAC-STYLE FLOATING APP DOCK
+        // ==========================================================
+        PanelWindow {
+            id: dockWindow
+
+            screen: screenRoot.modelData
+            color: "transparent"
+            exclusionMode: ExclusionMode.Auto
+            implicitHeight: appDock.dockEnabled ? 46 : 0
+            visible: appDock.isVisible
+
+            anchors {
+                bottom: true
+                left: true
+                right: true
             }
 
+            margins {
+                bottom: 0
+            }
+
+            mask: Region {
+                item: appDock
+            }
+
+            AppBar {
+                id: appDock
+
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: 0
+            }
         }
 
         // ==========================================================
@@ -135,8 +164,6 @@ Variants {
         PanelWindow {
             id: settingsWindow
 
-            // Real visibility of the wayland surface. Only flips to false
-            // once the shrink-out animation finishes, not immediately.
             property bool actuallyVisible: false
 
             screen: screenRoot.modelData
@@ -173,7 +200,6 @@ Variants {
                     xScale: 0.85
                     yScale: 0.85
                 }
-
             }
 
             ParallelAnimation {
@@ -197,7 +223,6 @@ Variants {
                     duration: 200
                     easing.type: Easing.OutCubic
                 }
-
             }
 
             SequentialAnimation {
@@ -221,13 +246,11 @@ Variants {
                         duration: 200
                         easing.type: Easing.InCubic
                     }
-
                 }
 
                 ScriptAction {
                     script: settingsWindow.actuallyVisible = false
                 }
-
             }
 
             Connections {
@@ -241,13 +264,11 @@ Variants {
                     } else {
                         if (settingsWindow.actuallyVisible)
                             shrinkOutAnimation.restart();
-
                     }
                 }
 
                 target: GlobalStates
             }
-
         }
 
         // ==========================================================
@@ -256,8 +277,6 @@ Variants {
         PanelWindow {
             id: calculatorWindow
 
-            // Real visibility of the wayland surface. Only flips to false
-            // once the shrink-out animation finishes, not immediately.
             property bool actuallyVisible: false
 
             screen: screenRoot.modelData
@@ -294,7 +313,6 @@ Variants {
                     xScale: 0.85
                     yScale: 0.85
                 }
-
             }
 
             ParallelAnimation {
@@ -318,7 +336,6 @@ Variants {
                     duration: 200
                     easing.type: Easing.OutCubic
                 }
-
             }
 
             SequentialAnimation {
@@ -342,13 +359,11 @@ Variants {
                         duration: 200
                         easing.type: Easing.InCubic
                     }
-
                 }
 
                 ScriptAction {
                     script: calculatorWindow.actuallyVisible = false
                 }
-
             }
 
             Connections {
@@ -362,16 +377,11 @@ Variants {
                     } else {
                         if (calculatorWindow.actuallyVisible)
                             calculatorShrinkOutAnimation.restart();
-
                     }
                 }
 
                 target: GlobalStates
             }
-
         }
-
     }
-
 }
- 

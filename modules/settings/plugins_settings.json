@@ -1,5 +1,6 @@
 {
     "bluetoothQuickToggle": true,
+    "bottomAppBar": false,
     "lyricsWidget": true,
     "performanceWidget": true,
     "weatherWidget": true
