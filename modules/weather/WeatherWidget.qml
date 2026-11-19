@@ -34,7 +34,8 @@ RowLayout {
         text: root.temperature
         color: Theme.text
         font.pixelSize: 14
-        font.bold: true
+        font.family: "JetBrainsMono Nerd Font"
+        font.weight: 900
     }
 
     Connections {

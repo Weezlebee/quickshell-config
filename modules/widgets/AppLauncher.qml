@@ -297,6 +297,7 @@ Item {
                                     Text {
                                         text: appDelegate.modelData.name || ""
                                         font.pixelSize: 14; font.bold: true
+                                        font.family: "JetBrainsMono Nerd Font"
                                         color: launcherRoot.textColor
                                         elide: Text.ElideRight
                                         Layout.fillWidth: true
@@ -305,6 +306,7 @@ Item {
                                     Text {
                                         text: appDelegate.modelData.comment || ""
                                         font.pixelSize: 11
+                                        font.family: "JetBrainsMono Nerd Font"
                                         color: launcherRoot.subTextColor
                                         Layout.fillWidth: true
                                         elide: Text.ElideRight
