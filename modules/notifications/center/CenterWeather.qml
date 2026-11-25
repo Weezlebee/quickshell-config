@@ -6,7 +6,7 @@ import "../../theme"
 import "../../weather/weatherService.js" as WeatherService
 
 // Weather tile for the notification center: current conditions + the next 7 days.
-// Uses the same WeatherService / LocaleConfig / ServicesConfig as your weather widget.
+// Uses the same WeatherService / LocaleConfig / ServicesConfig the weather widget.
 Rectangle {
     id: root
 
