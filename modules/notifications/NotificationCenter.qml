@@ -47,7 +47,7 @@ PanelWindow {
     // 0 = hidden, 1 = fully shown; keep the window alive while animating out
     property real reveal: Notifs.centerOpen ? 1 : 0
     Behavior on reveal {
-        NumberAnimation { duration: 320; easing.type: Easing.OutCubic }
+        NumberAnimation { duration: 500; easing.type: Easing.OutCubic }
     }
     visible: Notifs.centerOpen || reveal > 0.001
 
