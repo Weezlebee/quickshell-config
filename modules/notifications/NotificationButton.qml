@@ -1,7 +1,6 @@
 import QtQuick
 import "../theme"
 
-// Bell + unread count for your bar.
 //   left click  -> toggle the notification center
 //   right click -> toggle do-not-disturb
 Item {
