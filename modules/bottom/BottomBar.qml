@@ -5,6 +5,7 @@ import "../theme"
 import "../top"
 import "../widgets"
 import "./"
+import "../notifications"
 import QtQuick
 import Quickshell
 import Quickshell.Hyprland
@@ -70,6 +71,26 @@ Variants {
                                 launcherContent.closeWithAnimation();
                             else
                                 launcherPopup.visible = true;
+                        }
+                    }
+                }
+
+                // BOTTOM-LEFT CLICK TARGET FOR NOTIFICATIONS
+                Item {
+                    width: 200
+                    anchors.top: parent.top
+                    anchors.bottom: parent.bottom
+                    anchors.left: parent.left
+
+                    MouseArea {
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        acceptedButtons: Qt.LeftButton | Qt.RightButton
+                        onClicked: mouse => {
+                            if (mouse.button === Qt.RightButton)
+                                Notifs.dnd = !Notifs.dnd;
+                            else
+                                Notifs.centerOpen = !Notifs.centerOpen;
                         }
                     }
                 }

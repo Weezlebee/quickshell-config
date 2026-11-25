@@ -37,7 +37,7 @@ Item {
         "IntelliJ IDEA Community Edition",
         "GPU Screen Recorder",
         "Google Chrome",
-        "Steam",
+        "Files",
         "Zoom Workplace",
         "Settings"
     ]

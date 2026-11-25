@@ -7,6 +7,7 @@ import "modules/right"
 import "modules/bottom"
 import "modules/frame"
 import "modules/lock"
+import "modules/notifications"
 
 ShellRoot {
 
@@ -17,6 +18,10 @@ ShellRoot {
     BottomBar {}
 
     TopBar {}
+
+    NotificationPopups {}
+
+    NotificationCenter {}
 
     Lock {
         id: lockScreen

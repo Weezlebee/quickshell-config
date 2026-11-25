@@ -41,9 +41,10 @@ Item {
 
     property var pinnedApps: [
         "LibreWolf", "Spotify", 
-        "PrusaSlicer", "IntelliJ IDEA Community Edition", 
-        "GPU Screen Recorder", "Google Chrome",
-        "Modrinth App", "Steam", "Zoom Workplace"
+        "Thunderbird", "IntelliJ IDEA Community Edition", 
+        "GPU Screen Recorder", "PrusaSlicer", 
+        "Google Chrome", "Steam",
+        "Zoom Workplace"
     ]
 
     property var actionCommands: [
@@ -278,7 +279,7 @@ Item {
 
                                 Rectangle {
                                     width: 36; height: 36
-                                    color: launcherRoot.isActionMode ? "#31748f" : launcherRoot.cardBgColor
+                                    color: launcherRoot.isActionMode ? "#31748f" : launcherRoot.cardBgColor //SETS COLOR FOR MISC
                                     radius: 8
 
                                     IconImage {
